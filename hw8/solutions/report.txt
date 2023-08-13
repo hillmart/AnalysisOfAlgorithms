@@ -1,0 +1,68 @@
+0. (a) Facebook	
+   undirected, sparse, cyclic
+
+   (b) Twitter
+   directed, sparse, cyclic
+
+   (c) a family
+   undirected, dense, cyclic
+
+   (d) V=airports, E=direct_flights
+   undirected, sparse, cyclic
+   (assuming if there is a direct flight from A to B,
+    there must also be a direct flight from B to A)
+
+   (e) a mesh
+   undirected, sparse, cyclic
+
+   ---+---+---+--
+      |   |   | 
+   ---+---+---+--
+
+   (f) V=courses, E=prerequisites
+   directed, sparse, acyclic
+
+   (g) a tree
+   undirected, sparse, acyclic
+   
+   (h) V=linux_software_packages, E=dependencies
+   directed, sparse, acyclic
+
+   (i) DP subproblems for 0-1 knapsack
+   directed, sparse, acyclic
+
+   Can you name a very big dense graph?
+   No. Naturally occuring big graphs are fundamentally sparse.
+
+1. time: O(V+E)
+   We provided many different implementations of topological sort (see topol.py):
+   (0) bottom-up (BFS), using a queue but no head pointer 
+   (1) bottom-up (BFS), using queue (maintain a head pointer pointing to the start of the queue)
+   (2) recursive top down (DFS), see textbooks (or Thursday's lecture).
+   (3) bottom-up (BFS), using stack (pop() and append())
+
+   questions:
+   (a) the two nested for loops (for i and for x) in bounded knapsack is a topological order,
+       but notice that generally there are many possible topological orders for a DP problem,
+       for example, we can swap the two loops (either row first or column first).
+
+   (b-c) the top-down implementations for DP problems basically use a topological order found by 
+    	 top-down topological sort (see solution 2 above and in topol.py).
+	  
+2. time: O(V+E)
+   note that we added a dummy sink so that the best path always ends there,
+   it makes the code shorter, but you can also just start backtracing from the v that has max best[v].
+
+   Among the DP problems we have seen so far, Viterbi can solve:
+
+   Fib, # bitstrings, MIS, all kinds of knapsacks, coins, longest/shortest/count path in DAG, TSP (HW9).
+
+   An extended version of Viterbi (from graph to hypergraph) can also solve:
+
+   # BSTs and HW10 RNA.
+
+   Among them, Dijkstra, by contrast, can only solve:
+
+   coins, shortest-path in DAG, TSP. (why?)
+   
+DO READ OUR SOLUTION CODE!!

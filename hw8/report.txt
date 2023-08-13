@@ -1,0 +1,76 @@
+0. For the following graphs, decide whether they are
+   (1) directed or undirected, (2) dense or sparse, and (3) cyclic or acyclic:
+
+   (a) Facebook
+        Undirected because both people have to friend eachother
+        Sparse because the number of friendships is << number of users
+        Cyclic because users can have friends in a circle
+   (b) Twitter
+        Directed because following can go one way
+        Sparse because the number of follows is << number of users
+        Cyclic because follows can go in a circle
+   (c) a family
+        Undirected because everyone has relationships with everyone
+        Dense because there are much more relationships than members
+        Cyclic because the relationships fo in a circle
+   (d) V=airports, E=direct_flights
+        Directed because the flights go one way
+        Sparse, not all airports are connected so less edges than needed
+        Cyclic because you could go in a circle
+   (e) a mesh
+        Undirected because the connections go in any direction
+        Sparse, nodes are not connected with all others
+        Cyclic because connected in a circle
+   (f) V=courses, E=prerequisites
+        Directed, prerequisites only go one way
+        Sparse, much less edges than nodes^2
+        Acyclic, because you have to be able to go through without being stuck
+   (g) a tree
+        Directed because it starts from a root
+        Sparse because less edges than nodes^2
+        Acyclic or it wouldnt be a tree
+   (h) V=linux_software_packages, E=dependencies
+        Directed, dependencies only go one way
+        Sparse, much less edges than nodes^2
+        Acyclic, because you have to be able to go through without being stuck
+   (i) DP subproblems for 0-1 knapsack
+        Directed, recursion goes downward
+        Sparse, less recursive calls than subproblems^2
+        Acyclic, or it wouldnt work and youd get infinite recursion
+   Can you name a very big dense graph?
+        The biggest dense graph I can name is acquaintances in my high school
+        because eveyone reqcognized everyone else. Bigger than that is hard
+        because every node need as many edges out as there are nodes.
+
+1. (a) did you realize that bottom-up implementations of DP use (implicit) topological orderings?
+        Yes, starting from the smallest subproblem and going up 
+        ensures that an implicit topological order to be able to 
+        compute bigger subproblems is met by the time you get to them.
+   (b) what about top-down implementations? what order do they use to traverse the graph?
+        Yes, because the recursive calls are like prerequisites for courses
+       so it goes down and then comes back up for each subproblem having met
+       recursive prerequisites to compute that problem. They use topological order
+       as well.
+   (c) does that suggest there is a top-down solution for topological sort as well? 
+        Yes it seems like you could memoize a top-down solution for topological sort.
+
+
+Debriefing (required!): --------------------------
+
+0. What's your name?
+    Martin Hill
+1. Approximately how many hours did you spend on this assignment?
+    6
+2. Would you rate it as easy, moderate, or difficult?
+    Moderate
+3. Did you work on it mostly alone, or mostly with other people?
+    Alone
+4. How deeply do you feel you understand the material it covers (0%-100%)?
+    70%
+5. Take a moment to reflect on your midterm performance; separate the data structures and DP parts.
+   Now, do you understand all the problems you didn't solve correctly?
+   I got the subproblems for the coin problem incorrect. I split the min into two options
+   when really it was a loop through the values of i 1~n. I understand now why it needs to
+   loop through.
+6. Any other comments?
+    No.

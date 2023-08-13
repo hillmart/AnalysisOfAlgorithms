@@ -1,0 +1,33 @@
+0. Because the values held in f(n) are increasing exponentially the runtime 
+is not necessarily O(n). 
+
+1. The complexity is O(n) because with bottom-up it just goes through each element,
+with top-down and memoization it records the results so it only does each calculation
+once.
+
+2a. The complexity of this DP is O(n^2) because of the nested for-loop.
+2b. The Catalan Numbers.
+
+DEBRIEFING
+0. What's your name?
+Marty Hill
+1. Approximately how many hours did you spend on this assignment?
+5
+2. Would you rate it as easy, moderate, or difficult?
+moderate
+3. Did you work on it mostly alone, or mostly with other people?
+Malik helped me
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+100%
+5. Take a moment to reflect on your Quiz 2 performance,
+   (make sure you understand all the problems that you got wrong),
+   and what you plan to achieve in the Midterm.
+I struggled most with analyzing complexities so I will make sure to understand 
+those better for the midterm and also study the example code more closely. My 
+goal for the midterm is 80%.
+6. Any other comments?
+Thank you to Malik for helping me past the end of his office hours! He really
+helped me understand the concept and how to apply dynamic programming.
+Also, I went back and did the bottom up for mis, but that file is now not my 
+fastest time so idk if you can see the version I submitted that has only max_wis 
+and max_wis2.

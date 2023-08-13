@@ -1,0 +1,51 @@
+HW9 solutions
+
+1. Dijkstra:
+
+   Q: What if you only have heapq, can you still make Dijkstra work (with the built-in heapq)?
+      Can you re-analyze the time/space complexities?
+
+   A: If our priority queue assumes static priorities (i.e., no decrease-key operation), then there might be duplicate entries of each node (with different values) in the priority queue, and each node might be popped from the queue multiple times. Note that only the first pop of each node contains the optimal value for that node, and you can ignore all future pops of that node (it's already black).
+
+   new complexity: O(ElogE + ElogE) = O(ElogE).
+   this is because in the worse case there are E possible updates (one for each edge), each of which can be stored in the queue (without a mechanism of checking duplicates or updating the key), so the size of the queue is also O(E). Therefore in the worst case there will be E possible pops (though only V of them are useful). Thus E pops and E pushes, each with O(logE).
+
+   compare with standard Dijkstra: O(VlogV + ElogV) = O((V+E)logV).
+
+   note that the difference between the two complexities is really minor. Even for a dense graph, i.e., E=O(V^2), the difference is only in the constant factor, since O(ElogE) = O(2 V^2 logV) and O((V+E)logV) = O(V^2 logV).
+
+   in reality, sometimes the heapq version could even be faster, since maintaining an indexed priority queue is non-trivial (with a large constant factor).
+
+
+   Q: Is Dijkstra a greedy algorithm or dynamic programming algorithm?
+      Most textbooks (such as KT and CLRS) classify it as a greedy algorithm,
+      but some people have different opinions, e.g.:
+      https://www.quora.com/Is-Dijkstras-Algorithm-a-greedy-algorithm-or-a-dynamic-programming-a
+lgorithm
+      https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Dynamic_programming_perspective
+
+      What do you think?
+
+   A: Dijkstra can be viewed as a DP algorithm and is not a greedy one.
+      Famous textbooks like CLRS and KT are incorrect about this, while references [1-3] are correct.
+
+      A greedy algorithm makes a decision which can not be revised in the future, while a DP algorithm is global optimization and the final decision must be backtraced from the target node. During Dijkstra, each node keeps being updated (until popped), and there is no way of telling whether a node is included in the global best solution from source to target until the very end, which is very different from a greedy algorithm which keeps expanding one single solution (i.e., a path from source). Dijkstra is just a different style of DP, which visits subproblems in a best-first rather than topological order. If you don't think Dijkstra is DP, then you're restricting DP to only Viterbi-style.
+
+      Three orders for solving DP: bottom-up topological, top-down topological, and best-first (the last one only applies to some DP instances).
+
+      See more details in:
+      [1] L. Huang, Advanced Dynamic Programming in Semiring and Hypergraph Frameworks (2008). 
+      https://aclanthology.org/C08-5001.pdf
+      [2] M. Sniedovich, Dijkstra's algorithm revisited: the dynamic programming connexion (2006). 
+      http://matwbn.icm.edu.pl/ksiazki/cc/cc35/cc3536.pdf
+      [3] Wikipedia: 
+      https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Dynamic_programming_perspective
+
+      Note: that being said, a closely related algorithm, Prim's algorithm for minimum spanning tree, which looks almost identical to Dijkstra's, is indeed greedy, because it always expands one single solution (a partial spanning tree).
+
+   Q: for problems that can be solved by both Dijkstra and Viterbi, which one is faster?
+
+   A: (assuming single source, single destination) depends on the graph and the target node. The key insight is that Dijkstra can skip a lot of "useless nodes", if they are even worse than the target in terms of distance (thus never useful in updating the target); but Viterbi also skips nodes that are *after* the target node in the topological order for similar reasons. So it really depends on how early the target node gets blackend in each algorithm. Let's say in Viterbi, the target node ranks x (out of n) in the topological order, and in Dijkstra, it ranks y (out of n) by value (distance), then it depends on the comparison between x/y and log V.
+
+   For the case of single-source, all destinations: then Viterbi is always faster, as both algorithms have to visit all nodes.
+

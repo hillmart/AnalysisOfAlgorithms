@@ -1,0 +1,35 @@
+0. When inserting each element in it is O(n) for n elements times O(logn) time to insert each one
+so it ends up O(nlogn)
+For Heapify we go through all the non-leaf nodes (n/2 at most) and make no more than 2 swaps at each,
+so we end up with O(n) complexity.
+
+1. nebsta is O(n^2logn) because we have to enumerate all the pairs then sort them. Sorting is n^2logn^2
+which dominates and simplifies to O(n^2logn).
+nebstb is O(n^2) from the enumeration which dominates the O(nlogn) qselect
+nbestc is O(nlogn) because it spends O(nlogn) sorting and O(n) popping from the heap and pushing everytime it pops.
+
+2. The for loop multiplies the if statements by O(n) complexity. The first k elements is just O(klogk) because 
+heappush is O(logn). After that it is O(nlogn) because heapreplace is O(logn) complexity. The sort at the end
+is O(klogk). When you add those togther O(nlogn) dominates and the final complexity is just O(nlogn).
+
+3. The time complexity is O((n+k)*logk) because creating the heap is klogk and pushing into the list of the top
+players is nlogk. This is not optimal, the heap could be made smaller if there are more states than spots available.
+
+Debriefing (required!): --------------------------
+
+0. What's your name?
+    Marty Hill
+1. Approximately how many hours did you spend on this assignment?
+    5
+2. Would you rate it as easy, moderate, or difficult?
+    Moderate
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+    Alone
+4. How deeply do you feel you understand the material it covers (0%-100%)?
+    %80
+5. Which part(s) of the course you like the most so far?
+    Solving problems using outlines from lecture.
+6. Which part(s) of the course you dislike the most so far?
+    Questions interpreting code on the quizes.

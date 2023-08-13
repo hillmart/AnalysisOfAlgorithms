@@ -1,0 +1,22 @@
+qselect:
+Best case is O(n) where the pivot is the desired element so it only goes through creating the two lists
+for O(n) and then returns the pivot.
+Worst case is O(n) when the pivot is the largest or smallest and the partition is unbalanced, making it 
+go through the recursion with complexity O(n) O(n) times.
+Average case if O(n) because the random selection averages the pivot to the middle of the array size wise
+so the partions are largely balanced.
+
+Debriefing (required!): --------------------------
+
+1. Approximately how many hours did you spend on this assignment?
+    4
+2. Would you rate it as easy, moderate, or difficult?
+    moderate
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+    alone
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+    100%
+5. Any other comments?
+    This was a fun assignment! The youtube videos were very helpful.

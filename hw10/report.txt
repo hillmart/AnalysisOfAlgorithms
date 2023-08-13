@@ -1,0 +1,19 @@
+***Please analyze time/space complexities for each problem in report.txt.
+Best: O(n^3) time and O(n^2) space
+
+Total: O(^3) time and O(n^2) space
+
+kbest: Time Complexity: O(n^3 + k * n^2 * m), and space Complexity: O(n^2 * m)
+
+0. What's your name?
+Marty
+1. Approximately how many hours did you spend on this assignment?
+12
+2. Would you rate it as easy, moderate, or difficult?
+difficule
+3. Did you work on it mostly alone, or mostly with other people?
+alone and at Apoorv's office hours, thank you Apoorv! You helped me understand best and total very well.
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+0% kbest, 100% best and total
+5. Any other comments?
+No, thank you for a great term this has been a great class

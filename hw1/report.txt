@@ -1,0 +1,39 @@
+The best case is if the pivot number is in the middle of the data. 
+It splits the data into two even halves so it only needs to make 
+log n recursive calls. Each call takes n iterations to get through
+the partition. So best case is O(n log n)
+
+The worst case is if the pivot number is the smallest or largest
+in the data because the sorted list will only increase in size by
+1 each iteration. It will by O(n^2) complexity.
+
+The average complexity will be O(n log n).
+
+
+Qsort
+
+sort is O(nlogn) on average because its divide and conquer
+
+sorted(t) is also O(nlogn) on average because it goes through the 
+binary tree recursively
+
+_search is O(h) for the worst case because it goes through the whole
+list
+
+search is also O(h) worst case because it uses _search
+
+insert is O(h) for the worst case where the tree is just a linked list
+
+
+Debriefing
+
+1. Approximately how many hours did you spend on this assignment?
+    This assignment took me about 4 hours.
+2. Would you rate it as easy, moderate, or difficult?
+    I would rate it as moderate.
+3. Did you work on it mostly alone, or mostly with other people?
+    I worked alone.
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+    I feel that I understand %80 of the material.
+5. Any other comments?
+    No, it was an interesting assignment.

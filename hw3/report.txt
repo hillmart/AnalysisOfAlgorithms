@@ -1,0 +1,26 @@
+If the input array is not sorted, the fastest way to return the k closest elements will be to use 
+quickselect. The time complexity of quickselect will be O(n) to make the difference array + O(n) 
+to do the quickselect kth smallest element + O(n) to find all the elements closer than the kth 
+element. So O(n) overall, vs O(logn +k) for the sorted version. 
+
+4.
+a. (Unsorted Array) push: O(1), pop: O(n), peek: O(n), heapify: O(1)
+b. (Sorted high first) push: O(n), pop: O(n), peek: O(1), heapify: O(nlogn)
+c. (Sorted low first) push: O(n), pop: O(1), peek: O(1), heapify: O(nlogn)
+d. (Linked List high at head) push: O(n), pop: O(1), peek: O(1), heapify: O(nlogn)
+e. (Binary Heap) push: O(logn), pop: O(logn), peek: O(1), heapify: O(n)
+
+Debriefing (required!): --------------------------
+
+1. Approximately how many hours did you spend on this assignment?
+    6
+2. Would you rate it as easy, moderate, or difficult?
+    moderate, kmergesort was the hardest
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+    alone
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+    80%
+5. Any other comments?
+    This was a fun assignment! The lecture was very helpful.

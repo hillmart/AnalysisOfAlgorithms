@@ -1,0 +1,35 @@
+***Please answer time/space complexities for each problem in report.txt.
+Time complexity is O((nodes + edges)log(nodes))
+Space complexity is O(nodes + edges)
+
+Q: What if you only have heapq, can you still make Dijkstra work (with the built-in heapq)? 
+      Can you re-analyze the time/space complexities?
+You can, you just push better values each time and if a node has already been visited ignore
+any duplicates for it later. THe time complexity increases to O((nodes + edges)log(edges)) 
+because you push log e times vs pushing log v times for the better case. Space is still O(nodes + edges)
+
+Q: Is Dijkstra a greedy algorithm or dynamic programming algorithm?
+     What do you think?
+I think it is a dynamic programming algorithm because it checks all the cases and informs shorter paths
+on smaller subproblems.
+
+Q: for problems that can be solved by both Dijkstra and Viterbi, which one is faster? 
+Dijkstra is typically faster because it will find the shortest path without visiting all the nodes.
+If you have a problem that requires you visiting every node in the graph viterbi may be faster.
+
+Debriefing (required!): --------------------------
+
+0. What's your name?
+Martin Hill
+1. Approximately how many hours did you spend on this assignment?
+5
+2. Would you rate it as easy, moderate, or difficult?
+moderate
+3. Did you work on it mostly alone, or mostly with other people?
+alone
+4. How deeply do you feel you understand the material it covers (0%-100%)?
+70%
+5. If you've passed all testcases, how many attempts did you use?
+15+
+6. Any other comments?
+No

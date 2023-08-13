@@ -1,0 +1,44 @@
+0. For each of the coding problems below:
+   (a) Describe a greedy solution.
+   (b) Show a counterexample to the greedy solution.
+   (c) Define the DP subproblem 
+   (d) Write the recurrence relations
+   (e) Do not forget base cases
+   (f) Analyze the space and time complexities
+   1 a. Greedy Solution is you go to the item with the best reward to cost ratio and take it until you
+    cannot fit any more, and then you try to fit the next best and so on. 
+    b. The counter example is W = 4, Store = [(3,3),(2,1.75)]. Greedy will fill up on 3 and be done. 
+    Smart will buy 2 2's and have more reward.
+    c. The DP subproblem is finding the maximum value using items that don't exceed the weight.
+    d. The reccurence relation is bag[w] = max(bag[w], bag[w - wi] + vi)
+    e. The base case is bag[0] = 0
+    f. The time complexity is O(n*W) because you go through W weights and have to evaluate n items. 
+    The space complexity is O(W) for storing the best case for each subproblem.
+    2 a. Greedy Solution is you go to the item with the best reward to cost ratio and take it until you
+    cannot fit any more or the item limit is reached, and then you try to fit the next best and so on. 
+    b. The counter example is W = 4, Store = [(3,3,1),(2,1.75,2)]. Greedy will fill up on 3 and be done. 
+    Smart will buy 2 2's and have more reward.
+    c. The DP subproblem is finding the maximum value using items that don't exceed the weight or their item limit.
+    d. The reccurence relation is bag[w][i] = max of bag[w - j*wi][i-1] + j*vi where j is from 0 to Ci 
+    e. The base case is bag[where w or i == 0] = 0
+    f. the time complexity is O(W*n) and space complexity is O(W*n)
+
+1. The time complexity is O(n*W) because you go through W weights and have to evaluate n items. 
+    The space complexity is O(W) for storing the best case for each subproblem.
+
+2. the time complexity is O(W*n) and space complexity is O(W*n)
+
+DEBRIEFING
+
+0. What's your name?
+    Marty Hill
+1. Approximately how many hours did you spend on this assignment?
+    5
+2. Would you rate it as easy, moderate, or difficult?
+    difficult
+3. Did you work on it mostly alone, or mostly with other people?
+    alone and Tianshuo helped me
+4. How deeply do you feel you understand the material it covers (0%-100%)?
+    90%
+5. For the graded question, approximately how many attempts did you make before passing all testcases?
+    10, but I was mostly running it on my own computer with test cases.
