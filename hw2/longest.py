@@ -16,3 +16,16 @@ def _longest(tree):
         return (length, height)
 
 longest = lambda tree: _longest(tree)[0]
+
+
+# def longest_path(tree):
+#     def dfs(tree):
+#         if tree == []:
+#             return (0,0)
+#         left_len, left_height = dfs(tree[0])
+#         right_len, right_height = dfs(tree[2])
+#         length = max(left_len, right_len, left_height + right_height + 1)
+#         height = max(left_height + 1, right_height + 1)
+#         return length, height
+        
+#     return max(dfs(tree)) - 1
