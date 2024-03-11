@@ -1,0 +1,77 @@
+CS 325-001, Analysis of Algorithms, Spring 2023
+HW2 - Divide-n-conquer: mergesort, number of inversions, longest path
+
+Due Monday Apr 17, 11:59pm (same submission instructions as HW1).
+No late submission will be accepted.
+
+Need to submit: report.txt, qselect.py, and longest.py.
+longest.py will be graded for correctness (1%).
+
+To submit:
+flip $ /nfs/farm/classes/eecs/spring2023/cs325-001/submit hw2 report.txt {qselect,longest}.py
+(You can submit each file separately, or submit them together.)
+
+To see your best results so far:
+flip $ /nfs/farm/classes/eecs/spring2023/cs325-001/query hw2
+
+
+Textbooks for References:
+[1] CLRS Ch. 2
+
+1. Quickselect with Randomized Pivot (CLRS Ch. 9.2).
+   Given an index k and an array of n numbers (1<=k<=n), return the kth smallest number in the array.
+
+   >>> from qselect import *
+   >>> qselect(2, [3, 10, 4, 7, 19])
+   4
+   >>> qselect(4, [11, 2, 8, 3])
+   11
+
+   This is very similar to quicksort, except for one-sided recursion.
+
+   Q: What's the best-case, worst-case, and average-case time complexities? Briefly explain.
+
+   Filename: qselect.py
+
+
+2. [WILL BE GRADED] 
+
+   Length of the longest path in a binary tree (number of edges).
+   
+   We will use the "buggy qsort" representation of binary trees from HW1:
+   [left_subtree, root, right_subtree]
+
+   >>> longest([[], 1, []])
+   0
+
+   >>> longest([[[], 1, []], 2, [[], 3, []]])
+   2
+
+   >>> longest([[[[], 1, []], 2, [[], 3, []]], 4, [[[], 5, []], 6, [[], 7, [[], 9, []]]]])
+   5
+
+   Note the answer is 5 because the longest path is 1-2-4-6-7-9.   
+
+   Filename: longest.py
+   Must run in O(n) time.
+
+3. [OPTIONAL: a question from Quiz 1]
+   Redo the number of inversions using quicksort instead of mergesort.
+   You can still name your code inversions.py and submit it to HW1 for testing:
+
+   flip $ /nfs/farm/classes/eecs/spring2023/cs325-001/submit hw1 inversions.py
+
+
+Debriefing (required!): --------------------------
+
+1. Approximately how many hours did you spend on this assignment?
+2. Would you rate it as easy, moderate, or difficult?
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+5. Any other comments?
+
+This section is intended to help us calibrate the homework assignments. 
+Your answers to this section will *not* affect your grade; however, skipping it
+will certainly do.
